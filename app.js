@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 const App = document.createElement("div");
-    App.innerHTML = "Hello World";
+    App.innerHTML = "Hello";
     App.style.position = "absolute";
     App.style.height = "100%";
     App.style.width = "100%";
