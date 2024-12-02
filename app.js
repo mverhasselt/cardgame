@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 const App = document.createElement("div");
     App.innerHTML = "Hello";
+    App.id = "App";
     App.style.position = "absolute";
     App.style.height = "100%";
     App.style.width = "100%";
@@ -14,6 +15,7 @@ const App = document.createElement("div");
     App.style.backgroundColor = "black";
     let Square = false;
     App.onpointerdown = (e) => {
+        capturePointer(e);
         if (!Square) {
             Square = document.createElement("div");
             Square.style.position = "absolute";
@@ -21,6 +23,8 @@ const App = document.createElement("div");
             Square.style.top = `${e.y}px`;
             Square.style.width = "100px";
             Square.style.height = "100px";
+            Square.style.transform = "translate(-50%, -50%)";
+            Square.style.pointerEvents = "none"
             Square.style.backgroundColor = "red";
             document.body.appendChild(Square);
         }
@@ -34,4 +38,19 @@ const App = document.createElement("div");
     };
 
     document.body.appendChild(App);
+
 });
+
+function toggleFullscreen() {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else {
+        document.documentElement.requestFullscreen();
+    }
+}
+
+function capturePointer(e) {
+    e.target.setPointerCapture(e.pointerId);
+    console.log(e.pointerId);
+    console.log(e.target.id);
+}
