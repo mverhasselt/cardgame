@@ -12,17 +12,26 @@ const App = document.createElement("div");
     App.style.padding = "0px";
     App.style.textAlign = "center";
     App.style.backgroundColor = "black";
-
+    let Square = false;
     App.onpointerdown = (e) => {
-        console.log(e.x, e.y);
-        const Square = document.createElement("div");
-        Square.style.position = "absolute";
-        Square.style.left = `${e.x}px`;
-        Square.style.top = `${e.y}px`;
-        Square.style.width = "100px";
-        Square.style.height = "100px";
-        Square.style.backgroundColor = "red";
-        document.body.appendChild(Square);
+        if (!Square) {
+            Square = document.createElement("div");
+            Square.style.position = "absolute";
+            Square.style.left = `${e.x}px`;
+            Square.style.top = `${e.y}px`;
+            Square.style.width = "100px";
+            Square.style.height = "100px";
+            Square.style.backgroundColor = "red";
+            document.body.appendChild(Square);
+        }
+    
     };
+    App.onpointermove = (e) => {
+        if (Square) {
+            Square.style.left = `${e.x}px`;
+            Square.style.top = `${e.y}px`;
+        }
+    };
+
     document.body.appendChild(App);
 });
