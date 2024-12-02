@@ -1,3 +1,3 @@
 # cardgame
 Card Game 
-readme file for frist github project
+readme file for first github project
