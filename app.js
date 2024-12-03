@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 const App = document.createElement("div");
-    App.innerHTML = "Hello";
+    App.innerHTML = "Touch the screen";
     App.id = "App";
     App.style.position = "absolute";
     App.style.height = "100%";
@@ -51,6 +51,5 @@ function toggleFullscreen() {
 
 function capturePointer(e) {
     e.target.setPointerCapture(e.pointerId);
-    console.log(e.pointerId);
-    console.log(e.target.id);
+    
 }
