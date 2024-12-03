@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 const App = document.createElement("div");
-    App.innerHTML = "Touch the screen";
+    App.innerHTML = "Touch the screen 2";
     App.id = "App";
     App.style.position = "absolute";
     App.style.height = "100%";
