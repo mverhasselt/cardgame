@@ -6,7 +6,7 @@ const App = document.createElement("div");
     App.style.position = "absolute";
     App.style.height = "100%";
     App.style.width = "100%";
-    App.style.color = "red";
+    App.style.color = "white";
     App.style.fontSize = "20px";
     App.style.fontWeight = "bold";
     App.style.margin = "0px";
@@ -23,9 +23,10 @@ const App = document.createElement("div");
             Square.style.top = `${e.y}px`;
             Square.style.width = "100px";
             Square.style.height = "100px";
+        
             Square.style.transform = "translate(-50%, -50%)";
             Square.style.pointerEvents = "none"
-            Square.style.backgroundColor = "red";
+            Square.style.backgroundColor = "pink";
             document.body.appendChild(Square);
         }
     
